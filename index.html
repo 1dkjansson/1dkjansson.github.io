@@ -3,64 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Minimalist Baker Clone</title>
+  <title>Minimalist Recipes</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <nav>
-      <ul class="nav-left">
+      <h1>Minimalist Recipes</h1>
+      <ul>
         <li><a href="#">All Recipes</a></li>
         <li><a href="#">Vegan</a></li>
         <li><a href="#">Gluten-Free</a></li>
       </ul>
-      <h1>Minimalist <br />Baker</h1>
-      <ul class="nav-right">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">Blogger Resources</a></li>
-      </ul>
     </nav>
     <div class="tagline">
-      <span class="logo">🍽️</span>
-      <p>Simple Recipes That Make You Feel Good</p>
+      <img src="https://minimalistbaker.com/wp-content/themes/mb-v3/assets/images/mb-logo.svg" alt="MB Logo" height="30" />
+      <span>Simple Recipes That Make You Feel Good</span>
     </div>
   </header>
 
   <main>
-    <section class="recipes">
-      <div class="recipes-header">
-        <h2>RECIPES</h2>
-        <a href="#" class="show-all">SHOW ME EVERYTHING →</a>
+    <div class="recipes-header">
+      <h2>Recipes</h2>
+      <a href="#" class="show-all">Show Me Everything →</a>
+    </div>
+
+    <div class="recipe-grid">
+      <!-- Recipe Card -->
+      <div class="card">
+        <img src="https://minimalistbaker.com/wp-content/uploads/2023/04/Jerk-Tofu-Plantain-Bowls-7.jpg" alt="Jerk Tofu" />
+        <div class="tags">
+          <span class="tag">GF</span>
+          <span class="tag">VG</span>
+          <span class="tag">V</span>
+          <span class="tag">DF</span>
+        </div>
+        <h3>Jerk Tofu & Roasted Plantain Bowls</h3>
       </div>
-      <div class="recipe-grid">
-        <!-- Recipe Card -->
-        <div class="card">
-          <img src="https://minimalistbaker.com/wp-content/uploads/2024/04/Jerk-Tofu.jpg" alt="Jerk Tofu Bowl" />
-          <div class="tags"><span>GF</span><span>VG</span><span>V</span><span>DF</span></div>
-          <h3>Jerk Tofu & Roasted Plantain Bowls</h3>
-        </div>
 
-        <div class="card">
-          <img src="https://minimalistbaker.com/wp-content/uploads/2023/08/Veggie-Burger.jpg" alt="Pesto Veggie Burger" />
-          <div class="tags"><span>GF</span><span>VG</span><span>V</span><span>DF</span><span>NS</span></div>
-          <h3>Pesto Veggie Burgers with Balsamic Aioli</h3>
-        </div>
+      <!-- Add more recipe cards here -->
 
-        <div class="card">
-          <img src="https://minimalistbaker.com/wp-content/uploads/2023/06/Chocolate-Date-Bars.jpg" alt="Chocolate Bars" />
-          <div class="tags"><span>GF</span><span>V</span><span>DF</span><span>NS</span></div>
-          <h3>Fudgy Tahini Date Chocolate Bars</h3>
-        </div>
-
-        <div class="card">
-          <img src="https://minimalistbaker.com/wp-content/uploads/2023/05/Rhubarb-Crumble.jpg" alt="Rhubarb Bars" />
-          <div class="tags"><span>GF</span><span>VG</span><span>V</span><span>DF</span><span>NS</span></div>
-          <h3>Strawberry Rhubarb Crumble Bars (GF)</h3>
-        </div>
-      </div>
-    </section>
+    </div>
   </main>
 </body>
 </html>
