@@ -1,36 +1,65 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>The Baking Studio</title>
-        <style>
-            h1 {
-                font-size: 24px;
-                text-align: center;
-                font-family: serif;
-                position: relative;
-                left: -50px;
-                top:-10px;
-            }
-            .baking-studio {
-                text-align: center;
-                font-size: 30px;
-                display: inline-block;
-                transform: rotate(-10deg);
-                position: relative;
-                left: 40px;
-                top:-10px;
-            }
-        </style>
-        <meta charset="utf-8">
-    </head>
-    <body>
-    <h1>
-        The <br>
-        <span class = "baking-studio"><em>Baking Studio</em></span>
-    </h1>
-        <p>
-            this is a really good poem<br>
-            this is a really good poem<br>
-        </p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minimalist Baker Clone</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-left">
+        <li><a href="#">All Recipes</a></li>
+        <li><a href="#">Vegan</a></li>
+        <li><a href="#">Gluten-Free</a></li>
+      </ul>
+      <h1>Minimalist <br />Baker</h1>
+      <ul class="nav-right">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Blogger Resources</a></li>
+      </ul>
+    </nav>
+    <div class="tagline">
+      <span class="logo">🍽️</span>
+      <p>Simple Recipes That Make You Feel Good</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="recipes">
+      <div class="recipes-header">
+        <h2>RECIPES</h2>
+        <a href="#" class="show-all">SHOW ME EVERYTHING →</a>
+      </div>
+      <div class="recipe-grid">
+        <!-- Recipe Card -->
+        <div class="card">
+          <img src="https://minimalistbaker.com/wp-content/uploads/2024/04/Jerk-Tofu.jpg" alt="Jerk Tofu Bowl" />
+          <div class="tags"><span>GF</span><span>VG</span><span>V</span><span>DF</span></div>
+          <h3>Jerk Tofu & Roasted Plantain Bowls</h3>
+        </div>
+
+        <div class="card">
+          <img src="https://minimalistbaker.com/wp-content/uploads/2023/08/Veggie-Burger.jpg" alt="Pesto Veggie Burger" />
+          <div class="tags"><span>GF</span><span>VG</span><span>V</span><span>DF</span><span>NS</span></div>
+          <h3>Pesto Veggie Burgers with Balsamic Aioli</h3>
+        </div>
+
+        <div class="card">
+          <img src="https://minimalistbaker.com/wp-content/uploads/2023/06/Chocolate-Date-Bars.jpg" alt="Chocolate Bars" />
+          <div class="tags"><span>GF</span><span>V</span><span>DF</span><span>NS</span></div>
+          <h3>Fudgy Tahini Date Chocolate Bars</h3>
+        </div>
+
+        <div class="card">
+          <img src="https://minimalistbaker.com/wp-content/uploads/2023/05/Rhubarb-Crumble.jpg" alt="Rhubarb Bars" />
+          <div class="tags"><span>GF</span><span>VG</span><span>V</span><span>DF</span><span>NS</span></div>
+          <h3>Strawberry Rhubarb Crumble Bars (GF)</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
 </html>
