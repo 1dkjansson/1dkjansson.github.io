@@ -29,18 +29,22 @@ nav ul li a {
 }
 
 h1 {
-  font-family: 'Georgia', serif;
-  font-style: italic;              /* Makes it cursive */
-  font-size: 40px;
-  color: #d35400;                 /* A bold orange accent */
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  color: #d35400; /* A bold orange accent */
   text-align: center;
-  transform: rotate(-3deg);       /* Slight diagonal tilt */
+  transform: rotate(-3deg);
   margin: 0;
   padding: 10px;
   background: linear-gradient(to right, #fef9f8, #fce3cf);
   display: inline-block;
   border-radius: 8px;
   box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+}
+
+h1:hover {
+  transform: rotate(0deg) scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .tagline {
