@@ -6,8 +6,7 @@ body {
 
 header {
   border-bottom: 1px solid #ccc;
-  font-family: cursive;
-  transform: rotate(20deg);
+  
 }
 
 nav {
@@ -31,9 +30,17 @@ nav ul li a {
 
 h1 {
   font-family: 'Georgia', serif;
-  font-size: 28px;
-  line-height: 1.2;
+  font-style: italic;              /* Makes it cursive */
+  font-size: 40px;
+  color: #d35400;                 /* A bold orange accent */
   text-align: center;
+  transform: rotate(-3deg);       /* Slight diagonal tilt */
+  margin: 0;
+  padding: 10px;
+  background: linear-gradient(to right, #fef9f8, #fce3cf);
+  display: inline-block;
+  border-radius: 8px;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
 }
 
 .tagline {
