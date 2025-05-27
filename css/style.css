@@ -1,64 +1,111 @@
+/* Reset and base styles */
 body {
+  margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fffaf6;
   color: #4a3f35;
-  line-height: 1.7;
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
+  background-color: #fffaf6;
 }
-.logo {
-  width: 100px;
-  height: auto;
-  display: block;
-  margin: 0 auto 20px;
-}
-main a {
+
+a {
   text-decoration: none;
-  color: #d2691e;
-  padding: 10px 16px;
-  background-color: #fff3e6;
-  border: 1px solid #f4c395;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-main a:hover {
-  background-color: #ffe0b3;
-  color: #8b4513;
-  transform: scale(1.05);
-}
-
-h1 {
-  font-size: 2.5em;
   color: #a0522d;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: white;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Hero section */
+.hero {
+  background-image: url("../images/hero-bread.jpg"); /* Add your image here */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  color: white;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: auto;
   text-align: center;
-  margin-bottom: 10px;
 }
 
-h2 {
-  color: #8b4513;
-  margin-top: 30px;
+.hero-content h2 {
+  font-size: 2.5em;
+  color: #ffe7cc;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 20px auto;
+.hero-content p {
+  margin: 10px 0;
+  font-size: 1.2em;
+  color: #ffe7cc;
+}
+
+.cta {
+  background-color: #ffcf99;
+  color: #5a3e2b;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.cta:hover {
+  background-color: #ffb84d;
+}
+
+/* Recipe section */
+.recipe-list {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.recipe-card {
+  display: inline-block;
+  margin: 20px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.recipe-card img {
+  width: 100%;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-ul, ol {
-  margin-left: 30px;
-  margin-bottom: 20px;
+.recipe-card h3 {
+  margin-top: 10px;
+  font-size: 1.3em;
 }
 
+/* Footer */
 footer {
   text-align: center;
-  margin-top: 40px;
-  font-size: 0.95em;
-  color: #7b5e57;
+  padding: 30px 20px;
+  background-color: #fcebd2;
+  font-size: 0.9em;
+  color: #5a3e2b;
 }
