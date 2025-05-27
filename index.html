@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Baking Recipes</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <img src="images/logo.png" alt="My Baking Recipes Logo" class="logo">
-    <h1>Welcome to My Baking House</h1>
-    <p>Delicious recipes from my kitchen to yours!</p>
+  <header class="hero">
+    <div class="overlay">
+      <nav>
+        <h1 class="logo">My Baking Recipes</h1>
+        <button class="menu-button">☰</button>
+      </nav>
+      <div class="hero-content">
+        <h2>Good recipes for a good day.</h2>
+        <p>Homemade sweets that bring comfort and joy.</p>
+        <a href="#recipes" class="cta">🍰 View Recipes</a>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <h2>Recipes</h2>
-    <ul>
-      <li><a href="recipes/chocolate-cake.html">🍫 Chocolate Cake</a></li>
-      <li><a href="recipes/banana-bread.html">🍌 Banana Bread</a></li>
-    </ul>
+  <main id="recipes">
+    <section class="recipe-list">
+      <h2>My Recipes</h2>
+      <div class="recipe-card">
+        <img src="images/chocolate-cake.jpg" alt="Chocolate Cake">
+        <h3><a href="recipes/chocolate-cake.html">🍫 Chocolate Cake</a></h3>
+      </div>
+      <div class="recipe-card">
+        <img src="images/banana-bread.jpg" alt="Banana Bread">
+        <h3><a href="recipes/banana-bread.html">🍌 Banana Bread</a></h3>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>Made with love ♥</p>
+    <p>© 2025 My Baking Recipes. Made with love ♥</p>
   </footer>
 </body>
 </html>
