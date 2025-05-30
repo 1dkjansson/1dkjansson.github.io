@@ -19,21 +19,22 @@ h1, h2, h3 {
 
 nav {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
   color: white;
-  position: relative;
+  flex-wrap: wrap;
 }
 
 .logo-title {
   display: flex;
   align-items: center;
   gap: 10px;
-  justify-content: center;
-  margin: 0 auto;
-  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: 'Pacifico', cursive;
+  color: #ffe7cc;
+  text-shadow: 2px 2px #5a3e2b;
 }
 
 .logo-icon {
@@ -49,13 +50,11 @@ nav {
   text-shadow: 2px 2px #5a3e2b;
 }
 .menu-button {
-  align-self: flex-end
   background: none;
   border: none;
-  font-size: 1.8em;
   color: #ffe7cc;
+  font-size: 1.8em;
   cursor: pointer;
-  margin-top: -40px;
 }
 
 .menu-dropdown {
