@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #3b2f2f;
+}
+
+.about-body {
+  background: linear-gradient(to right, #fceabb, #f8b500);
+}
+
+.contact-body {
+  background: linear-gradient(to right, #ffd3a5, #fd6585);
+}
+
+.about-header,
+.contact-header {
+  padding: 30px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.about-header h1,
+.contact-header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #5a3e2b;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #5a3e2b;
+}
+
+.about-main,
+.contact-main {
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-card,
+.contact-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  max-width: 700px;
+  text-align: center;
+}
+
+.about-card h2,
+.contact-card h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #a0522d;
+}
+
+.contact-card ul {
+  list-style: none;
+  padding: 0;
+  line-height: 2em;
+}
+
+.about-footer,
+.contact-footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 0.9em;
+  color: #5a3e2b;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+}
