@@ -1,61 +1,33 @@
+<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About - My Baking Recipes</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/about-contact.css">
 </head>
-<body>
-  <header class="hero">
-    <div class="overlay">
-      <nav>
-        <div class="logo-container">
-          <img src="images/logo.jpg" alt="Logo" class="logo-img">
-          <h1 class="logo">My Baking Recipes</h1>
-        </div>
-        <button class="menu-button" id="menuButton">☰</button>
-        <div class="menu-dropdown" id="dropdownMenu">
-          <a href="index.html#recipes">Recipes</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </nav>
-      <div class="hero-content">
-        <h2>Our Story</h2>
-        <p>Where sugar meets soul</p>
-      </div>
-    </div>
+<body class="about-body">
+  <header class="about-header">
+    <h1>About My Baking Recipes</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <main style="max-width: 700px; margin: 40px auto; padding: 0 20px;">
-    <h2>About My Baking Recipes</h2>
-    <p>
-      My Baking Recipes began as a handwritten recipe book in my grandmother's kitchen. What started as a passion for 
-      Saturday morning cookies has now grown into a digital collection of beloved bakes and sweet surprises.
-    </p>
-    <p>
-      Each recipe is tested with love, sprinkled with tradition, and shared in the hopes of adding a little joy to your day. 
-      Whether you're an expert or a first-time baker, you're welcome here.
-    </p>
-    <p>Thank you for stopping by — let's bake something beautiful together!</p>
+  <main class="about-main">
+    <section class="about-card">
+      <h2>Our Story</h2>
+     <p> My Baking Recipes began as a handwritten recipe book in my grandmother's kitchen. 
+       What started as a passion for Saturday morning cookies has now grown into a digital collection of beloved bakes and sweet surprises. </p>
+      <p> Each recipe is tested with love, sprinkled with tradition, and shared in the hopes of adding a little joy to your day. Whether you're an expert or a first-time baker, you're welcome here. </p> 
+      <p>Thank you for stopping by — let's bake something beautiful together!</p>
+    </section>
   </main>
 
-  <footer>
-    <p>© 2025 My Baking Recipes. Made with love ♥</p>
+  <footer class="about-footer">
+    <p>© 2025 My Baking Recipes. Thank you for visiting!</p>
   </footer>
-
-  <script>
-    const menuBtn = document.getElementById("menuButton");
-    const dropdown = document.getElementById("dropdownMenu");
-    menuBtn.addEventListener("click", () => {
-      dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
-    });
-    window.addEventListener("click", (e) => {
-      if (!menuBtn.contains(e.target) && !dropdown.contains(e.target)) {
-        dropdown.style.display = "none";
-      }
-    });
-  </script>
 </body>
 </html>
