@@ -49,11 +49,13 @@ nav {
   text-shadow: 2px 2px #5a3e2b;
 }
 .menu-button {
+  align-self: flex-end
   background: none;
   border: none;
   font-size: 1.8em;
-  color: white;
+  color: #ffe7cc;
   cursor: pointer;
+  margin-top: -40px;
 }
 
 .menu-dropdown {
