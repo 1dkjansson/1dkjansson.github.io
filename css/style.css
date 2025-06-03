@@ -34,6 +34,7 @@ nav {
   top: 20px;
   right: 20px;
   z-index: 10;
+  pointer-events: auto;
 }
 
 #searchBar {
@@ -137,6 +138,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .hero-content {
