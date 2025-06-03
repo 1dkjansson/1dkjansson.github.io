@@ -133,7 +133,7 @@ nav {
 
 .overlay {
   background: rgba(0, 0, 0, 0.5);
-  height: 90vh;
+  height: 95vh;
   overflow: hidden;
   padding: 20px;
   display: flex;
