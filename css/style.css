@@ -23,6 +23,12 @@ nav {
   color: white;
   position: relative;
 }
+#noResultsMessage {
+  font-size: 1.1em;
+  color: #a0522d;
+  font-style: italic;
+}
+
 .search-container {
   display: flex;
   justify-content: flex-end;
