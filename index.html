@@ -52,7 +52,9 @@
         <img src="images/lemon-bars.jpg" alt="Lemon Bars">
         <h3><a href="recipes/lemon-bars.html">Lemon Bars</a></h3>
       </div>
-
+      <p id="noResultsMessage" style="display: none; font-style: italic; color: #a0522d; margin-top: 20px;">
+        No recipes found.
+      </p>
     </section>
   </main>
 
@@ -63,24 +65,31 @@
   <script>
   document.getElementById("searchBar").addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
-      e.preventDefault(); // Stops form-like behavior
+      e.preventDefault(); // Prevent form submission
+
       const filter = this.value.toLowerCase();
       const recipes = document.querySelectorAll(".recipe-card");
+      const noResultsMessage = document.getElementById("noResultsMessage");
+
+      let foundMatch = false;
 
       recipes.forEach(function (recipe) {
         const title = recipe.querySelector("h3").textContent.toLowerCase();
-        if (title.includes(filter)) {
-          recipe.style.display = "inline-block";
-        } else {
-          recipe.style.display = "none";
-        }
+        const isMatch = title.includes(filter);
+        recipe.style.display = isMatch ? "inline-block" : "none";
+        if (isMatch) foundMatch = true;
+      });
+
+      // Show or hide the "no results" message
+      noResultsMessage.style.display = foundMatch ? "none" : "block";
+
+      // Scroll to the recipe section
+      document.getElementById("recipes").scrollIntoView({
+        behavior: "smooth"
       });
     }
   });
 </script>
-
-
-
 
   <script>
     const menuBtn = document.getElementById("menuButton");
