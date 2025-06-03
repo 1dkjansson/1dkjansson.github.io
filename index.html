@@ -61,6 +61,19 @@
   </footer>
 
   <script>
+  document.getElementById("searchBar").addEventListener("keyup", function () {
+    const filter = this.value.toLowerCase();
+    const recipes = document.querySelectorAll(".recipe");
+
+    recipes.forEach(function (recipe) {
+      const text = recipe.textContent.toLowerCase();
+      recipe.style.display = text.includes(filter) ? "block" : "none";
+    });
+  });
+</script>
+
+
+  <script>
     const menuBtn = document.getElementById("menuButton");
     const dropdown = document.getElementById("dropdownMenu");
 
