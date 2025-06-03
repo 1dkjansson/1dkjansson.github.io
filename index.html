@@ -61,16 +61,20 @@
   </footer>
 
   <script>
-  document.getElementById("searchBar").addEventListener("keyup", function () {
-    const filter = this.value.toLowerCase();
-    const recipes = document.querySelectorAll(".recipe-card");
+  document.getElementById("searchBar").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault(); // prevent form submission or page reload
+      const filter = this.value.toLowerCase();
+      const recipes = document.querySelectorAll(".recipe-card");
 
-    recipes.forEach(function (recipe) {
-      const title = recipe.querySelector("h3").textContent.toLowerCase();
-      recipe.style.display = text.includes(filter) ? "inline-block" : "none";
-    });
+      recipes.forEach(function (recipe) {
+        const title = recipe.querySelector("h3").textContent.toLowerCase();
+        recipe.style.display = title.includes(filter) ? "inline-block" : "none";
+      });
+    }
   });
 </script>
+
 
 
   <script>
