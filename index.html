@@ -44,25 +44,25 @@
 
     <section class="recipe-list">
       <h2>My Recipes</h2>
-      <div class="recipe-card" data-category="cake">
+      <div class="recipe-card" data-category="cake" data-id="chocolate-cake">
         <img src="images/chocolate-cake.jpg" alt="Chocolate Cake">
         <h3><a href="recipes/chocolate-cake.html">Chocolate Cake</a></h3>
         <button class="favorite-btn">♡</button>
 
       </div>
-      <div class="recipe-card" data-category="bread">
+      <div class="recipe-card" data-category="bread" data-id="banana-bread">
         <img src="images/banana-bread.jpg" alt="Banana Bread">
         <h3><a href="recipes/banana-bread.html">Banana Bread</a></h3>
         <button class="favorite-btn">♡</button>
 
       </div>
-      <div class="recipe-card" data-category="muffins">
+      <div class="recipe-card" data-category="muffins" data-id="blueberry-muffins">
         <img src="images/blueberry-muffins.jpg" alt="Blueberry Muffins">
         <h3><a href="recipes/blueberry-muffins.html">Blueberry Muffins</a></h3>
         <button class="favorite-btn">♡</button>
 
       </div>
-      <div class="recipe-card" data-category="bars">
+      <div class="recipe-card" data-category="bars" data-id="lemon-bars">
         <img src="images/lemon-bars.jpg" alt="Lemon Bars">
         <h3><a href="recipes/lemon-bars.html">Lemon Bars</a></h3>
         <button class="favorite-btn">♡</button>
@@ -91,9 +91,13 @@
   filterButtons.forEach(button => {
     button.addEventListener("click", () => {
       const filter = button.getAttribute("data-filter");
+
+      document.getElementById("noResultsMessage").style.display = "none";
+      
       recipeCards.forEach(card => {
         const category = card.getAttribute("data-category");
-        card.style.display = (filter === "all" || category === filter) ? "inline-block" : "none";
+        const matches = (filter === "all" || category === filter);
+        card.style.display = matches ? "inline-block" : "none";
       });
     });
   });
@@ -142,6 +146,8 @@
         dropdown.style.display = "none";
       }
     });
+  </script>
+  
 <script>
   const favoriteButtons = document.querySelectorAll(".favorite-btn");
   const favoritesContainer = document.getElementById("favoritesContainer");
