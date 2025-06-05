@@ -47,18 +47,26 @@
       <div class="recipe-card" data-category="cake">
         <img src="images/chocolate-cake.jpg" alt="Chocolate Cake">
         <h3><a href="recipes/chocolate-cake.html">Chocolate Cake</a></h3>
+        <button class="save-button">❤️ Save</button>
+
       </div>
       <div class="recipe-card" datad-category = "bread">
         <img src="images/banana-bread.jpg" alt="Banana Bread">
         <h3><a href="recipes/banana-bread.html">Banana Bread</a></h3>
+        <button class="save-button">❤️ Save</button>
+
       </div>
       <div class="recipe-card" data-category="muffins">
         <img src="images/blueberry-muffins.jpg" alt="Blueberry Muffins">
         <h3><a href="recipes/blueberry-muffins.html">Blueberry Muffins</a></h3>
+        <button class="save-button">❤️ Save</button>
+
       </div>
       <div class="recipe-card" data-category="bars">
         <img src="images/lemon-bars.jpg" alt="Lemon Bars">
         <h3><a href="recipes/lemon-bars.html">Lemon Bars</a></h3>
+        <button class="save-button">❤️ Save</button>
+
       </div>
       <p id="noResultsMessage" style="display: none; font-style: italic; color: #a0522d; margin-top: 20px;">
         No recipes found.
@@ -129,6 +137,30 @@
       }
     });
 </script>
+
+  <script>
+  const saveButtons = document.querySelectorAll(".save-button");
+
+  saveButtons.forEach((button, index) => {
+    const recipeTitle = button.previousElementSibling.textContent.trim();
+
+    // Load saved state
+    if (localStorage.getItem(recipeTitle) === "saved") {
+      button.textContent = "💖 Saved";
+    }
+
+    button.addEventListener("click", () => {
+      if (localStorage.getItem(recipeTitle) === "saved") {
+        localStorage.removeItem(recipeTitle);
+        button.textContent = "❤️ Save";
+      } else {
+        localStorage.setItem(recipeTitle, "saved");
+        button.textContent = "💖 Saved";
+      }
+    });
+  });
+</script>
+
 
 </body>
 </html>
