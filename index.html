@@ -47,31 +47,37 @@
       <div class="recipe-card" data-category="cake">
         <img src="images/chocolate-cake.jpg" alt="Chocolate Cake">
         <h3><a href="recipes/chocolate-cake.html">Chocolate Cake</a></h3>
-        <button class="save-button">❤️ Save</button>
+        <button class="favorite-btn">♡</button>
 
       </div>
       <div class="recipe-card" data-category="bread">
         <img src="images/banana-bread.jpg" alt="Banana Bread">
         <h3><a href="recipes/banana-bread.html">Banana Bread</a></h3>
-        <button class="save-button">❤️ Save</button>
+        <button class="favorite-btn">♡</button>
 
       </div>
       <div class="recipe-card" data-category="muffins">
         <img src="images/blueberry-muffins.jpg" alt="Blueberry Muffins">
         <h3><a href="recipes/blueberry-muffins.html">Blueberry Muffins</a></h3>
-        <button class="save-button">❤️ Save</button>
+        <button class="favorite-btn">♡</button>
 
       </div>
       <div class="recipe-card" data-category="bars">
         <img src="images/lemon-bars.jpg" alt="Lemon Bars">
         <h3><a href="recipes/lemon-bars.html">Lemon Bars</a></h3>
-        <button class="save-button">❤️ Save</button>
+        <button class="favorite-btn">♡</button>
 
       </div>
       <p id="noResultsMessage" style="display: none; font-style: italic; color: #a0522d; margin-top: 20px;">
         No recipes found.
       </p>
     </section>
+
+    <section class="favorites-list">
+      <h2>Your Favorites</h2>
+      <div id="favoritesContainer"></div>
+    </section>
+
   </main>
 
   <footer>
@@ -136,49 +142,62 @@
         dropdown.style.display = "none";
       }
     });
+<script>
+  const favoriteButtons = document.querySelectorAll(".favorite-btn");
+  const favoritesContainer = document.getElementById("favoritesContainer");
+
+  function getFavorites() {
+    return JSON.parse(localStorage.getItem("favorites")) || [];
+  }
+
+  function saveFavorites(favs) {
+    localStorage.setItem("favorites", JSON.stringify(favs));
+  }
+
+  function renderFavorites() {
+    const favorites = getFavorites();
+    favoritesContainer.innerHTML = "";
+
+    favorites.forEach(id => {
+      const original = document.querySelector(`.recipe-card[data-id="${id}"]`);
+      if (original) {
+        const clone = original.cloneNode(true);
+        clone.querySelector(".favorite-btn").remove(); // don't duplicate buttons in favorites
+        favoritesContainer.appendChild(clone);
+      }
+    });
+  }
+
+  favoriteButtons.forEach(button => {
+    const card = button.closest(".recipe-card");
+    const recipeId = card.getAttribute("data-id");
+
+    // Mark active if already favorite
+    if (getFavorites().includes(recipeId)) {
+      button.classList.add("active");
+      button.textContent = "❤️";
+    }
+
+    button.addEventListener("click", () => {
+      let favorites = getFavorites();
+      if (favorites.includes(recipeId)) {
+        favorites = favorites.filter(id => id !== recipeId);
+        button.classList.remove("active");
+        button.textContent = "♡";
+      } else {
+        favorites.push(recipeId);
+        button.classList.add("active");
+        button.textContent = "❤️";
+      }
+      saveFavorites(favorites);
+      renderFavorites();
+    });
+  });
+
+  // Render favorites on page load
+  renderFavorites();
 </script>
 
-  <script>
-// Track visited recipes using localStorage
-document.querySelectorAll('.recipe-card a').forEach(link => {
-  link.addEventListener('click', function () {
-    let visited = JSON.parse(localStorage.getItem('visitedRecipes')) || [];
-    if (!visited.includes(this.textContent)) {
-      visited.push(this.textContent);
-      localStorage.setItem('visitedRecipes', JSON.stringify(visited));
-    }
-  });
-});
-
-// On load: highlight visited recipes
-window.addEventListener('DOMContentLoaded', () => {
-  const visited = JSON.parse(localStorage.getItem('visitedRecipes')) || [];
-  document.querySelectorAll('.recipe-card').forEach(card => {
-    const title = card.querySelector('h3 a').textContent;
-    if (visited.includes(title)) {
-      card.classList.add('visited');
-    }
-  });
-});
-</script>
-
-  <script>
-// Reveal recipe cards on scroll
-function revealOnScroll() {
-  const cards = document.querySelectorAll('.recipe-card');
-  const triggerPoint = window.innerHeight * 0.9;
-
-  cards.forEach(card => {
-    const cardTop = card.getBoundingClientRect().top;
-    if (cardTop < triggerPoint) {
-      card.classList.add('show');
-    }
-  });
-}
-
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('DOMContentLoaded', revealOnScroll);
-</script>
 
 
 
