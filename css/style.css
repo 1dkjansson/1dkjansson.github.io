@@ -121,6 +121,27 @@ nav {
   background: #ffcf99;
 }
 
+.filter-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.filter-buttons button {
+  margin: 0 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ffe7cc;
+  color: #5a3e2b;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.filter-buttons button:hover {
+  background-color: #ffcf99;
+}
+
+
 /* Hero section */
 .hero {
   background-image: url("../images/background-goods.jpg"); /* Add your image here */
@@ -193,6 +214,13 @@ nav {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+
+.recipe-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
 
 .recipe-card h3 {
   margin-top: 10px;
