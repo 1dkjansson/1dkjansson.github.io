@@ -34,9 +34,17 @@
   </header>
 
   <main id="recipes">
+    <div class="filter-buttons">
+      <button data-filter="all">All</button>
+      <button data-filter="cake">Cake</button>
+      <button data-filter="bread">Bread</button>
+      <button data-filter="muffins">Muffins</button>
+      <button data-filter="bars">Bars</button>
+    </div>
+
     <section class="recipe-list">
       <h2>My Recipes</h2>
-      <div class="recipe-card">
+      <div class="recipe-card" data-category="cake">
         <img src="images/chocolate-cake.jpg" alt="Chocolate Cake">
         <h3><a href="recipes/chocolate-cake.html">Chocolate Cake</a></h3>
       </div>
