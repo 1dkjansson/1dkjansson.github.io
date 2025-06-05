@@ -44,30 +44,31 @@
 
     <section class="recipe-list">
       <h2>My Recipes</h2>
+
       <div class="recipe-card" data-category="cake" data-id="chocolate-cake">
         <img src="images/chocolate-cake.jpg" alt="Chocolate Cake">
         <h3><a href="recipes/chocolate-cake.html">Chocolate Cake</a></h3>
         <button class="favorite-btn">♡</button>
-
       </div>
+
       <div class="recipe-card" data-category="bread" data-id="banana-bread">
         <img src="images/banana-bread.jpg" alt="Banana Bread">
         <h3><a href="recipes/banana-bread.html">Banana Bread</a></h3>
         <button class="favorite-btn">♡</button>
-
       </div>
+
       <div class="recipe-card" data-category="muffins" data-id="blueberry-muffins">
         <img src="images/blueberry-muffins.jpg" alt="Blueberry Muffins">
         <h3><a href="recipes/blueberry-muffins.html">Blueberry Muffins</a></h3>
         <button class="favorite-btn">♡</button>
-
       </div>
+
       <div class="recipe-card" data-category="bars" data-id="lemon-bars">
         <img src="images/lemon-bars.jpg" alt="Lemon Bars">
         <h3><a href="recipes/lemon-bars.html">Lemon Bars</a></h3>
         <button class="favorite-btn">♡</button>
-
       </div>
+
       <p id="noResultsMessage" style="display: none; font-style: italic; color: #a0522d; margin-top: 20px;">
         No recipes found.
       </p>
@@ -77,7 +78,6 @@
       <h2>Your Favorites</h2>
       <div id="favoritesContainer"></div>
     </section>
-
   </main>
 
   <footer>
@@ -85,55 +85,7 @@
   </footer>
 
   <script>
-  const filterButtons = document.querySelectorAll(".filter-buttons button");
-  const recipeCards = document.querySelectorAll(".recipe-card");
-
-  filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const filter = button.getAttribute("data-filter");
-
-      document.getElementById("noResultsMessage").style.display = "none";
-      
-      recipeCards.forEach(card => {
-        const category = card.getAttribute("data-category");
-        const matches = (filter === "all" || category === filter);
-        card.style.display = matches ? "inline-block" : "none";
-      });
-    });
-  });
-</script>
-
-
-  <script>
-  document.getElementById("searchBar").addEventListener("keydown", function (e) {
-    if (e.key === "Enter") {
-      e.preventDefault(); // Prevent form submission
-
-      const filter = this.value.toLowerCase();
-      const recipes = document.querySelectorAll(".recipe-card");
-      const noResultsMessage = document.getElementById("noResultsMessage");
-
-      let foundMatch = false;
-
-      recipes.forEach(function (recipe) {
-        const title = recipe.querySelector("h3").textContent.toLowerCase();
-        const isMatch = title.includes(filter);
-        recipe.style.display = isMatch ? "inline-block" : "none";
-        if (isMatch) foundMatch = true;
-      });
-
-      // Show or hide the "no results" message
-      noResultsMessage.style.display = foundMatch ? "none" : "block";
-
-      // Scroll to the recipe section
-      document.getElementById("recipes").scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-  });
-</script>
-
-  <script>
+    // Dropdown menu toggle
     const menuBtn = document.getElementById("menuButton");
     const dropdown = document.getElementById("dropdownMenu");
 
@@ -147,65 +99,102 @@
       }
     });
   </script>
-  
-<script>
-  const favoriteButtons = document.querySelectorAll(".favorite-btn");
-  const favoritesContainer = document.getElementById("favoritesContainer");
 
-  function getFavorites() {
-    return JSON.parse(localStorage.getItem("favorites")) || [];
-  }
+  <script>
+    // Search bar
+    document.getElementById("searchBar").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        const filter = this.value.toLowerCase();
+        const recipes = document.querySelectorAll(".recipe-card");
+        const noResultsMessage = document.getElementById("noResultsMessage");
+        let foundMatch = false;
 
-  function saveFavorites(favs) {
-    localStorage.setItem("favorites", JSON.stringify(favs));
-  }
+        recipes.forEach(function (recipe) {
+          const title = recipe.querySelector("h3").textContent.toLowerCase();
+          const isMatch = title.includes(filter);
+          recipe.style.display = isMatch ? "inline-block" : "none";
+          if (isMatch) foundMatch = true;
+        });
 
-  function renderFavorites() {
-    const favorites = getFavorites();
-    favoritesContainer.innerHTML = "";
-
-    favorites.forEach(id => {
-      const original = document.querySelector(`.recipe-card[data-id="${id}"]`);
-      if (original) {
-        const clone = original.cloneNode(true);
-        clone.querySelector(".favorite-btn").remove(); // don't duplicate buttons in favorites
-        favoritesContainer.appendChild(clone);
+        noResultsMessage.style.display = foundMatch ? "none" : "block";
+        document.getElementById("recipes").scrollIntoView({ behavior: "smooth" });
       }
     });
-  }
+  </script>
 
-  favoriteButtons.forEach(button => {
-    const card = button.closest(".recipe-card");
-    const recipeId = card.getAttribute("data-id");
+  <script>
+    // Filter buttons
+    const filterButtons = document.querySelectorAll(".filter-buttons button");
+    const recipeCards = document.querySelectorAll(".recipe-card");
 
-    // Mark active if already favorite
-    if (getFavorites().includes(recipeId)) {
-      button.classList.add("active");
-      button.textContent = "❤️";
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const filter = button.getAttribute("data-filter");
+        document.getElementById("noResultsMessage").style.display = "none";
+
+        recipeCards.forEach(card => {
+          const category = card.getAttribute("data-category");
+          const matches = (filter === "all" || category === filter);
+          card.style.display = matches ? "inline-block" : "none";
+        });
+      });
+    });
+  </script>
+
+  <script>
+    // Favorites system
+    const favoriteButtons = document.querySelectorAll(".favorite-btn");
+    const favoritesContainer = document.getElementById("favoritesContainer");
+
+    function getFavorites() {
+      return JSON.parse(localStorage.getItem("favorites")) || [];
     }
 
-    button.addEventListener("click", () => {
-      let favorites = getFavorites();
-      if (favorites.includes(recipeId)) {
-        favorites = favorites.filter(id => id !== recipeId);
-        button.classList.remove("active");
-        button.textContent = "♡";
-      } else {
-        favorites.push(recipeId);
+    function saveFavorites(favs) {
+      localStorage.setItem("favorites", JSON.stringify(favs));
+    }
+
+    function renderFavorites() {
+      const favorites = getFavorites();
+      favoritesContainer.innerHTML = "";
+
+      favorites.forEach(id => {
+        const original = document.querySelector(`.recipe-card[data-id="${id}"]`);
+        if (original) {
+          const clone = original.cloneNode(true);
+          clone.querySelector(".favorite-btn")?.remove();
+          favoritesContainer.appendChild(clone);
+        }
+      });
+    }
+
+    favoriteButtons.forEach(button => {
+      const card = button.closest(".recipe-card");
+      const recipeId = card.getAttribute("data-id");
+
+      if (getFavorites().includes(recipeId)) {
         button.classList.add("active");
         button.textContent = "❤️";
       }
-      saveFavorites(favorites);
-      renderFavorites();
+
+      button.addEventListener("click", () => {
+        let favorites = getFavorites();
+        if (favorites.includes(recipeId)) {
+          favorites = favorites.filter(id => id !== recipeId);
+          button.classList.remove("active");
+          button.textContent = "♡";
+        } else {
+          favorites.push(recipeId);
+          button.classList.add("active");
+          button.textContent = "❤️";
+        }
+        saveFavorites(favorites);
+        renderFavorites();
+      });
     });
-  });
 
-  // Render favorites on page load
-  renderFavorites();
-</script>
-
-
-
-
+    renderFavorites();
+  </script>
 </body>
 </html>
