@@ -121,25 +121,24 @@ nav {
   background: #ffcf99;
 }
 
-.filter-buttons {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.filter-buttons button {
-  margin: 0 8px;
-  padding: 8px 16px;
+.favorite-btn {
+  background: none;
   border: none;
-  border-radius: 20px;
-  background-color: #ffe7cc;
-  color: #5a3e2b;
-  font-weight: bold;
+  font-size: 1.5em;
+  color: #a0522d;
   cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.2s ease;
 }
 
-.filter-buttons button:hover {
-  background-color: #ffcf99;
+.favorite-btn:hover {
+  transform: scale(1.2);
 }
+
+.favorite-btn.active {
+  color: red;
+}
+
 
 
 /* Hero section */
