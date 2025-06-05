@@ -206,8 +206,6 @@ nav {
   margin: 20px;
   max-width: 300px;
   text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
   transition: all 0.5s ease;
 }
 
