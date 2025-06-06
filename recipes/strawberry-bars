@@ -14,7 +14,7 @@
   </header>
 
   <main>
-    <img src="../images/strawberry-bars.jpg" alt="Strawberry Bars" width="300">
+    <img src="../images/strawberry-bars.jpg" alt="Strawberry Bars" class="full-recipe-img">
 
     <h2>Ingredients</h2>
     <ul>
