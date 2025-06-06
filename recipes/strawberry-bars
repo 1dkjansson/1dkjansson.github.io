@@ -3,47 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Strawberry Bars - My Baking Recipes</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <title>Strawberry Bars Recipe</title>
+  <link rel="stylesheet" href="../css/recipe.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="hero">
-    <div class="overlay">
-      <nav>
-        <div class="logo-container">
-          <img src="../images/logo.jpg" alt="Logo" class="logo-img">
-          <h1 class="logo">My Baking Recipes</h1>
-        </div>
-        <a href="../index.html" class="cta">← Back to Recipes</a>
-      </nav>
-      <div class="hero-content">
-        <h2>Strawberry Bars</h2>
-        <p>Sweet crumbly crust with a fruity center.</p>
-      </div>
-    </div>
+  <header>
+    <h1>Strawberry Bars</h1>
+    <a href="../index.html">← Back to Home</a>
   </header>
 
-  <main class="recipe-list">
-    <img src="../images/strawberry-bars.jpg" alt="Strawberry Bars" style="width:100%; max-width:600px; border-radius:12px;">
-    <h3>Ingredients:</h3>
+  <main>
+    <img src="../images/strawberry-bars.jpg" alt="Strawberry Bars" width="300">
+
+    <h2>Ingredients</h2>
     <ul>
       <li>1 cup butter, softened</li>
-      <li>¾ cup sugar</li>
-      <li>2¼ cups flour</li>
-      <li>½ tsp salt</li>
-      <li>1½ cups strawberry jam</li>
+      <li>1 cup sugar</li>
+      <li>2 cups all-purpose flour</li>
+      <li>1/4 tsp salt</li>
+      <li>1/2 cup strawberry jam</li>
+      <li>1 cup chopped fresh strawberries</li>
+      <li>Powdered sugar for dusting (optional)</li>
     </ul>
-    <h3>Instructions:</h3>
+
+    <h2>Instructions</h2>
     <ol>
-      <li>Preheat oven to 350°F (175°C). Grease a 9x13-inch pan.</li>
-      <li>Cream butter and sugar. Mix in flour and salt until crumbly.</li>
-      <li>Press ⅔ into pan. Spread with jam. Crumble remaining dough on top.</li>
-      <li>Bake for 30–35 minutes. Cool completely before slicing.</li>
+      <li>Preheat oven to 350°F (175°C). Grease an 8x8 inch baking dish.</li>
+      <li>In a bowl, cream butter and sugar. Mix in flour and salt until crumbly.</li>
+      <li>Press 2/3 of the mixture into the bottom of the pan.</li>
+      <li>Spread jam over the crust. Top with chopped strawberries and sprinkle remaining crust mixture.</li>
+      <li>Bake for 35–40 minutes or until golden brown. Cool completely and dust with powdered sugar if desired.</li>
     </ol>
   </main>
 
   <footer>
-    <p>© 2025 My Baking Recipes. Made with love ♥</p>
+    <p>© 2025 My Baking Recipes</p>
   </footer>
 </body>
 </html>
